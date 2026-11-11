@@ -1,0 +1,81 @@
+/* ==========================================================
+   深空制图仪 —— 全局样式基底
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #04070e;
+  scrollbar-width: none;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 50% 44%, rgba(22, 54, 96, 0.34) 0%, rgba(22, 54, 96, 0) 62%),
+    radial-gradient(900px 680px at 82% 8%, rgba(18, 42, 78, 0.22) 0%, rgba(18, 42, 78, 0) 60%),
+    radial-gradient(900px 700px at 12% 92%, rgba(12, 30, 56, 0.24) 0%, rgba(12, 30, 56, 0) 62%),
+    #04070e;
+  color: #cfeaf7;
+  font-family: 'Bahnschrift', 'HarmonyOS Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 隐藏滚动条（保留滚轮 / 手势滚动能力） */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::selection {
+  background: rgba(90, 180, 255, 0.28);
+  color: #eaf6ff;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+button:focus-visible {
+  outline: 1px solid rgba(120, 190, 255, 0.5);
+  outline-offset: 2px;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+}
+
+/* 等宽数字字体：遥测 / 读数 */
+.mono {
+  font-family: 'Cascadia Mono', 'Consolas', 'SFMono-Regular', monospace;
+  font-variant-numeric: tabular-nums;
+}

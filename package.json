@@ -1,0 +1,28 @@
+{
+  "name": "particle-earth-hand",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "3D 粒子地球 + 摄像头隔空手势交互 (Vue3 + Vite + TS + Three.js + MediaPipe)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit -p tsconfig.json",
+    "assets:mediapipe": "node scripts/copy-mediapipe-assets.mjs",
+    "model:download": "node scripts/download-model.mjs",
+    "setup": "node scripts/copy-mediapipe-assets.mjs && node scripts/download-model.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.0",
+    "three": "^0.170.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.7",
+    "vue-tsc": "^2.2.0"
+  }
+}

@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.npm-cache/
+.vite-cache/
+.pnpm-store/
+.pnpm-home/
+.pnpm-global/
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# 可由 npm run setup 重新生成（体积大，不入库）
+public/mediapipe/
+public/models/
+
+# 本地工具缓存
+.frames/
+.pip-cache/
+.pytools/
+.env
+.env.local
