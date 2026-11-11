@@ -54,6 +54,11 @@ export interface Telemetry {
   date: string
 }
 
+/** public 下资源转成带 base 的 URL（GitHub Pages 子路径部署兼容） */
+function texUrl(p: string): string {
+  return import.meta.env.BASE_URL + p.replace(/^\//, '')
+}
+
 const props = defineProps<{
   pinch: number
   spread: number
@@ -1078,11 +1083,11 @@ async function init() {
   scene.add(new THREE.AmbientLight(0x22406e, 1.15))
 
   const [water, nightData, dayTex, nightTex, waterTex] = await Promise.all([
-    loadSampler('/textures/earth-water.png'),
-    loadSampler('/textures/earth-night.jpg'),
-    loadTex('/textures/earth-day.jpg'),
-    loadTex('/textures/earth-night.jpg'),
-    loadTex('/textures/earth-water.png', false),
+    loadSampler(texUrl('/textures/earth-water.png')),
+    loadSampler(texUrl('/textures/earth-night.jpg')),
+    loadTex(texUrl('/textures/earth-day.jpg')),
+    loadTex(texUrl('/textures/earth-night.jpg')),
+    loadTex(texUrl('/textures/earth-water.png'), false),
   ])
   if (disposed) return
 

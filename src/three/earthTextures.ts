@@ -184,9 +184,9 @@ function generateCloudTexture(w = 1024, h = 512): HTMLCanvasElement {
 export async function loadEarthTextures(): Promise<EarthTextures | null> {
   try {
     const [dayImg, waterImg, nightImg] = await Promise.all([
-      loadImage('/textures/earth-day.jpg'),
-      loadImage('/textures/earth-water.png'),
-      loadImage('/textures/earth-night.jpg'),
+      loadImage(import.meta.env.BASE_URL + 'textures/earth-day.jpg'),
+      loadImage(import.meta.env.BASE_URL + 'textures/earth-water.png'),
+      loadImage(import.meta.env.BASE_URL + 'textures/earth-night.jpg'),
     ])
 
     const dayCv = imageToCanvas(dayImg)

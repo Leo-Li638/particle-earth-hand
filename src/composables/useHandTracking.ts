@@ -20,9 +20,11 @@ import {
   type NormalizedLandmark,
 } from '@mediapipe/tasks-vision'
 
-/** 本地资源路径（由 scripts/copy-mediapipe-assets.mjs 复制到 public 下） */
-const WASM_DIR = '/mediapipe/wasm'
-const MODEL_PATH = '/models/hand_landmarker.task'
+/** 本地资源路径（由 scripts/copy-mediapipe-assets.mjs 复制到 public 下）
+ *  用 BASE_URL 拼接，部署到 GitHub Pages 子路径时同样可用 */
+const ASSET_BASE = import.meta.env.BASE_URL
+const WASM_DIR = ASSET_BASE + 'mediapipe/wasm'
+const MODEL_PATH = ASSET_BASE + 'models/hand_landmarker.task'
 
 /** 手掌中心参考点：腕关节 + 四指根部 + 中指根部 */
 const PALM_IDS = [0, 5, 9, 13, 17]
